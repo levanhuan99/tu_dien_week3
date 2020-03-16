@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="text" type="text"/>
+<button value="button" type="button" onclick="showWord()"> search</button><br/>
+<div id="dic"></div>
+<script>
+
+    let englishWord=['red','blue','white','pink','black','orange','green'];
+    let vietNameseWord=['đỏ','xanh','trắng','hồng','đen','cam','xanh lá'];
+    function showWord() {
+
+        let word=document.getElementById("text").value;
+        let index=-1;
+        let i=0;
+        for( i; i<englishWord.length; i++){
+            if(word===englishWord[i]){
+                index=i;
+                break;
+            }
+        }if(index != -1){
+            document.getElementById("dic").innerHTML=englishWord[i]+" "+"la mau"+vietNameseWord[i];
+        }else{
+            document.getElementById("dic").innerHTML=word+" "+"khong ton tai trong tu dien";
+        }
+        document.getElementById("text").value=" ";
+    }
+
+</script>
+</body>
+</html>
